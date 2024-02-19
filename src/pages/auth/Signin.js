@@ -48,6 +48,11 @@ function Signin(){
             }
             localStorage.setItem("token", user.token);
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("username", JSON.stringify(user?.username));
+            localStorage.setItem("email", JSON.stringify(user?.email));
+            localStorage.setItem("phone", JSON.stringify(user?.phone));
+            localStorage.setItem("id", JSON.stringify(user?._id));
+            
             toast.success(`Welcome back ${user.username}`);
             navigate("/discover")
           }).catch((err) => {

@@ -14,10 +14,10 @@ import userService,{ UpdateUser }  from './userService.ts'
 
 export const updateUserAction = createAsyncThunk(
     "/updateUserAction",
-    async ({id, isDisabled, phone, name, email,  merchant_application, role,  token, business_name, address, website}:any, thunkAPI: any,
+    async ({id,phone, username, email, token}:any, thunkAPI: any,
     ) => {
       try {
-        return await userService.updateUser({id, isDisabled, phone, name, email,  merchant_application, role,  token, business_name, address, website});
+        return await userService.updateUser({id, phone, username, email,  token });
       } catch (error: any) {
         const message =
           (error.response &&

@@ -105,17 +105,9 @@ const deleteUser = async ({ id, token }: UserProps) => {
   return data
 }
 
-const updateUser = async ({ phone, isDisabled, name, email, merchant_application, id, role, token, business_name, address, website }: any) => {
+const updateUser = async ({ id,phone, username, email, token }: any) => {
   const data = {
-    role,
-    business_name,
-    address,
-    website,
-    merchant_application,
-    phone, 
-    name, 
-    email,
-    isDisabled,
+    id,phone, username, email, token
   }
   const config = {
     headers: {
