@@ -1,11 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 import React from "react";
-
+import { logOutAction } from "../../redux/Features/auth/authLoginSlice.ts";
 const navigation = [
   { name: "Home", href: "/discover", current: true },
   { name: "Discover", href: "/discover", current: false },
   { name: "Buddies", href: "#", current: false },
-  { name: "Profile", href: "#", current: false },
+  { name: "Profile", href: "#", current: false},
   { name: "Settings ", href: "/settings", current: false },
 ];
 
@@ -55,11 +55,12 @@ function Header() {
           </div>
           <div className="flex flex-col items-center">
             <img
-              className="h-8 w-8 rounded-full"
+              className="h-6 w-6 rounded-full"
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt=""
             />
-            <p>{user}</p>
+            <p className="text-sm">{user}</p>
+            <p className="cursor-pointer text-sm text-red-500 font-bold" onClick={()=>logOutAction()}>Log Out</p>
           </div>
         </div>
       </div>

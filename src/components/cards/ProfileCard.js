@@ -18,7 +18,7 @@ const ProfileCard = () => {
             {loading && <div>Loading...</div>}
             {error && <div>Error: {error}</div>}
             {success && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="flex flex-col justify-between">
                     {users.map(user => (
                         <div key={user._id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <div className="flex justify-end px-4 pt-4">
@@ -29,8 +29,8 @@ const ProfileCard = () => {
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt="Bonnie image"
                                 />
-                                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user.username}</h5>
-                                <span className="text-sm text-gray-500 dark:text-gray-400">Interests: {user.interests_id}</span>
+                                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user?.username}</h5>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">Interests: {user?.email}</span>
                                 <div className="flex mt-4 md:mt-6">
                                     <a
                                         href="#"
