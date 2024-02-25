@@ -29,10 +29,10 @@ export const logOutAction = () => {
 
 export const loginAction = createAsyncThunk(
     "loginAction",
-    async ({email, password}: any, thunkAPI) => {
+    async ({email, password,phone}: any, thunkAPI) => {
         try {
-            console.log(email, password, "hereee2")
-            return await authService.login({email, password});
+            console.log(email, password,phone, "hereee2")
+            return await authService.login({email, password,phone});
         } catch (error: any) {
             const message =
               (error.response &&

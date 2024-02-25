@@ -1,6 +1,7 @@
 export interface AuthProps {
     email: string;
     password: string;
+    phone:string
 }
 
 export interface SignupProps {

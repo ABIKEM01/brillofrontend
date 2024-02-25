@@ -5,14 +5,14 @@ import { AuthProps, SignupProps } from './authDTO'
 
 const API_BASEURL = 'https://brilloapis.onrender.com/api/v1'
 
-const login = async ({email, password}: AuthProps) => {
-  console.log(email, password, "iokhebwdhshde")
+const login = async ({email, password,phone}: AuthProps) => {
+  console.log(email, password,phone, "iokhebwdhshde")
   const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
-  const {data} = await axios.post(`${API_BASEURL}/users/login`, {email, password}, config);
+  const {data} = await axios.post(`${API_BASEURL}/users/login`, {email, password,phone}, config);
   return data
 }
 
