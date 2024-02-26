@@ -20,7 +20,7 @@ function Signin() {
   const initial = {
     email: "",
     phone: "",
-    password: ""
+    password: "",
   };
 
   const [state, setState] = useState(initial);
@@ -29,7 +29,7 @@ function Signin() {
     const { name, value } = e.target;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -45,13 +45,13 @@ function Signin() {
     const loginData = {
       email: state.email.trim(),
       phone: state.phone.trim(),
-      password: state.password.trim()
+      password: state.password.trim(),
     };
 
     dispatch(loginAction(loginData))
       .then(unwrapResult)
       .then(({ user }) => {
-        console.log(user, "THE RES")
+        console.log(user, "THE RES");
         if (!user) {
           setIsSubmitting(false);
         } else {
@@ -61,7 +61,7 @@ function Signin() {
           localStorage.setItem("email", JSON.stringify(user?.email));
           localStorage.setItem("phone", JSON.stringify(user?.phone));
           localStorage.setItem("id", JSON.stringify(user?._id));
-          
+
           toast.success(`Welcome back ${user.username}`);
           navigate("/discover");
         }
@@ -99,11 +99,7 @@ function Signin() {
             </p>
           </div>
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form
-              className="space-y-6"
-              onSubmit={handleSubmit}
-              method="POST"
-            >
+            <form className="space-y-6" onSubmit={handleSubmit} method="POST">
               {isEmailFieldVisible && (
                 <div>
                   <label
@@ -117,7 +113,7 @@ function Signin() {
                       id="email"
                       name="email"
                       type="email"
-                      value={state.email}
+                      value={state.email.toLowerCase()}
                       onChange={changeHandler}
                       placeholder="Enter email address"
                       required
