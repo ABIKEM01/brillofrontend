@@ -140,7 +140,7 @@ const [interests, setInterests] = useState([]);
                     id="email"
                     name="email"
                     type="email"
-                    value={state.email}
+                    value={state.email.toLowerCase()}
                     onChange={changeHandler}
                     autoComplete="email"
                     required
